@@ -1,71 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOP: Sign-up Form</title>
-    <link rel="stylesheet" type="css/text" href="style.css">
-    <script src="/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign-up Form</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-container">
-            <img src="./images/odin-sign-up-form.jpg" alt="background">
-            <div>
-                <img src="./images/odin-sidebar.png" alt="odin-logo">
-                <span>ODIN</span>
-            </div>
-            <p>Photo by <a href="https://unsplash.com/@haliewestphoto">Halie West</a> on <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">Unsplash</a></p>
-        </div>
-        <!---->
-        <div class="form-container">
-            <div class="top">
-                <div>
-                    This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.
-                </div>
-                <div>Sign up <span class="italic">now</span> to get started.</div>
-                <div>You <span class="italic">know</span> you want to.</div>
-            </div>
-            <!---->
-            <div class="middle">
-                <div class="middle-heading">Let's do this!</div>
-                <form method="" action="" class="middle-form">
-                    <div>
-                        <p>
-                            <label for="first-name">FIRST NAME</label>
-                            <input type="text" id="first-name" name="first-name">
-                        </p>
-                        <p>
-                            <label for="email">EMAIL</label>
-                            <input type="email" id="email" name="email">
-                        </p>
-                        <p>
-                            <label for="password">PASSWORD</label>
-                            <input type="password" id="password" name="password">
-                        </p>
-                    </div>
-                    <div>
-                        <p>
-                            <label for="last-name">LAST NAME</label>
-                            <input type="text" id="last-name" name="last-name">
-                        </p>
-                        <p>
-                            <label for="tel">PHONE NUMBER</label>
-                            <input type="tel" id="tel" name="tel">
-                        </p>
-                        <p>
-                            <label for="confirm-password">CONFIRM PASSWORD</label>
-                            <input type="password" id="confirm-password" name="confirm-password">
-                        </p>
-                    </div>
-                </form>
-            </div>
-            <!---->
-            <div class="bottom">
-                <button class="btn">Create Account</button>
-                <div>Already have an account? <a href="" class="log-in">Log in</a></div>
-            </div>
-        </div>
+  <div class="main">
+    <div class="side-hero">
+      <div>
+        <img src="./images/odin-sidebar.png" alt="The Odin Project Logo">
+        <span>ODIN</span>
+      </div>
+      <p>
+        Photo by 
+        <a href="https://unsplash.com/@haliewestphoto" target="_blank">Halie West</a>
+         on 
+        <a href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA" target="_blank">Unsplash</a>
+        </p>
     </div>
+    
+    <div class="form-section">
+      <div class="top">
+        <div>
+          <p>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams. Sign up <span class="itali">now</span> to get started.</p>
+          <p>You <span class="itali">know</span> you want to.</p>
+        </div>
+      </div>
+      <div class="middle">
+        <p>Let's do this! </p>
+        <form id="my-form">
+          <div class="left-form">
+              <label for="firstname">FIRST NAME
+                <input type="text" id="firstname" name="firstname" required>
+                <div id='first-name-error' class='error'></div>
+              </label>
+              <label for="email">EMAIL
+                <input type="email" id="email" name="email" required autocomplete="off" placeholder="username123@example.com">
+                <div id='email-error' class='error'></div>
+              </label>
+              <label for="password">PASSWORD
+                <input type="password" id="password" name="password" required
+                pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
+                <div id='password-error' class='error error-pass'></div>
+              </label>
+          </div>
+
+          <div class="right-form">
+              <label for="lastname">LAST NAME
+                <input type="text" id="lastname" name="lastname" required>
+                <div id='last-name-error' class='error'></div>
+              </label>
+              <label for="phonenumber">PHONE NUMBER
+                <input type="tel" id="phonenumber" name="phonenumber" required
+                pattern='[0-9]{10}' placeholder="+84 696 969 696">
+                <div id='tel-error' class='error'></div>
+              </label>
+              <label for="passwordC">CONFIRM PASSWORD
+                <input type="password" id="passwordC" name="passwordC" required
+                pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}'>
+                <div id='passwordC-error' class='error'></div>
+              </label>
+          </div>
+        </form>
+      </div>
+      <div class='bottom'>
+        <button type="submit" form="my-form">Create Account</button>
+        <p>Already have an account? <a href="">Log in</a></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
